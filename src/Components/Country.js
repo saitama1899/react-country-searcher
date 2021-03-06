@@ -7,19 +7,19 @@ import LoadingSpinner from './LoadingSpinner'
 
 const Country = ({country}) => {
 
-  const WEATHER_STACK_API_KEY = process.env.REACT_APP_WEATHER_STACK
+  const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API
   const [weather, setWeather] = useState({})
 
   useEffect(() => {
     if (country.capital){
       axios
-      .get(`http://api.weatherstack.com/current?access_key=${WEATHER_STACK_API_KEY}&query=${country.capital}`)
+      .get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&appid=${WEATHER_API_KEY}&units=metric`)
       .then((response) => {
         const {data} = response
         setWeather(data)
       })
     }
-  },[WEATHER_STACK_API_KEY, country.capital])
+  },[WEATHER_API_KEY, country.capital])
  
   return (
     <>
