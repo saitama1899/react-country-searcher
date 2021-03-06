@@ -4,13 +4,13 @@ import axios from 'axios'
 const CountryWeather = ({weather}) => {
 
   const icon_url='https://openweathermap.org/img/wn/'
-  const TIMEZONE_API_KEY = process.env.REACT_APP_TIMEZONE_API
+  // const TIMEZONE_API_KEY = process.env.REACT_APP_TIMEZONE_API
+  const TIMEZONE_API_KEY = 'e17f232f27a34ea19f0599d6160e685d'
   const [timezone, settimezone] = useState({})
 
   useEffect(() => {
     if (weather.name){
       axios
-      // .get(`https://api.ipgeolocation.io/timezone?apiKey=${TIMEZONE_API_KEY}&lat=${weather.coord.lat}&long=${weather.coord.lon}`)
       .get(`https://api.ipgeolocation.io/timezone?apiKey=${TIMEZONE_API_KEY}&location=${weather.name}`)
       .then((response) => {
         const {data} = response
