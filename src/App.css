@@ -1,38 +1,157 @@
-.App {
+@font-face {
+  font-family: travel;
+  src: url(./travel.otf);
+}
+
+body {
+  background-image: url(./bg.jfif);
+}
+
+.container {
+  display: flex;
+}
+
+.container .column{
+  flex: 1;
+}
+
+.card {
+  margin: 3em auto;
+  width: 50em;
+  height: 600px;
+  background: #fffef9f0;
+  padding: 4em;
+  border-radius: 2.5em;
+  box-shadow: 10px 10px 15px -4px rgb(0 0 0 / 60%);
+}
+
+
+.card h1 {
+  font-family: travel;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  font-weight: 100;
+  color: #0f2f2e;
+}
+
+.card h2{
+  margin: 0 1px 10px 1px;
+}
+
+.card form {
+  text-align: center;
+  margin: 2em;
+}
+.card input[type="text"] {
+  font-size: 1.5rem;
+}
+
+.card .countryList {
+  list-style: none;
+  padding: 10px;
+}
+
+.card .countryList li {
+  padding: 8px;
+  font-size: 20px;
+}
+
+.card .countryList li:nth-of-type(2n+1),
+.card .weather span:nth-of-type(2n+1) {
+  background: #dededa;
+}
+
+.card .countryList li button {
+  margin-right: 10px;
+  float: right;
+  background: none;
+  color: #b54052;
+  border-style: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.card .countryList li button:hover {
+  background: #ad414e;
+  color: #ffffff;
+}
+
+.country {
+  background: #efeee8;
+  padding: 1em 2em;
+  border-radius: 1em;
+  box-shadow: 10px 10px 15px -10px rgb(0 0 0 / 20%);
+}
+
+.bleft {
+  border-left: 3px solid #dededa;
+  padding-left: 1em;
+}
+
+.card .languages {
+  list-style: none;
+  padding: 0;
+}
+
+.card .weather span {
+  vertical-align: top;
+  margin-left: 2em;
+  line-height: 1em;
+}
+
+.weather {
+  margin-top: 20px;
+  padding: 10px;
+}
+.weather img {
+  float:left;
+  box-shadow: 10px 10px 15px -10px rgb(0 0 0 / 20%);
+  border-radius: 50%;
+}
+
+.weather h3 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Loading spinner */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loading {
+  text-align: center;
+  margin-top: 2em;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
-
-.App-link {
-  color: #61dafb;
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #dededa transparent transparent transparent;
 }
-
-@keyframes App-logo-spin {
-  from {
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
