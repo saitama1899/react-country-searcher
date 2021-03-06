@@ -7,7 +7,8 @@ import LoadingSpinner from './LoadingSpinner'
 
 const Country = ({country}) => {
 
-  const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API
+  // const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API
+  const WEATHER_API_KEY = 'f269ee333f19bc7a21baf1e8e2c64699'
   const [weather, setWeather] = useState({})
 
   useEffect(() => {
