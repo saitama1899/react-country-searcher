@@ -27,7 +27,8 @@ body {
 
 
 .card h1 {
-  font-family: travel;
+  /**font-family: travel;**/
+  font-family: 'Slackey', cursive;
   font-size: 3rem;
   text-align: center;
   margin: 0;
