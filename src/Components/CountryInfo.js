@@ -4,7 +4,7 @@ const CountryInfo = ({country}) => {
 
       <div className='column'>
         <h2>{country.name}</h2>
-        <img src={country.flag} alt={country.alpha2Code} width='250' />
+        <img src={country.flag} alt={country.alpha2Code} width='200' />
       </div>
 
       <div className='column bleft'>

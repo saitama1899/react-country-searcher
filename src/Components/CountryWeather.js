@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
-
+import clockImg from '../resources/clock.png';
 const CountryWeather = ({weather}) => {
 
   const icon_url='https://openweathermap.org/img/wn/'
@@ -36,7 +36,7 @@ const CountryWeather = ({weather}) => {
 
       <div className='column'>
         <h3>Local time</h3>
-        <img src='https://blaugranas.es/clock.png' alt='clock' width='100' />
+        <img src={clockImg} alt='clock' width='100' />
         <span>{timezone.time_24}</span><br/>
         <span>Clouds {weather.clouds.all}%</span><br/>
         <span>Lat: {weather.coord.lat}</span><br/>

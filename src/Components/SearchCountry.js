@@ -1,7 +1,7 @@
 const SearchCountry = (props) => {
   return (
     <form>
-      <input type='text' onChange={props.onChange} value={props.value}/>
+      <input type='text' onChange={props.onChange} value={props.value} />
     </form>
   );
 };

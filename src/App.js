@@ -28,14 +28,18 @@ function App() {
   useEffect(() => {
     if(newSearch) {
       axios
-      .get(`https://restcountries.eu/rest/v2/name/${newSearch}`)
+      .get(`https://restcountries.com/v2/name/${newSearch}`)
       .then(response => {
+        console.log(response);
         const {data} = response
         const c = 
           data.filter(country => country.name.toLowerCase()
             .includes(newSearch.toLowerCase()))
 
         checkLimit(c)
+      })
+      .catch(error => {
+        console.error(error);
       })
     } else {
       settooMuchResults(false) // Para evitar el mensaje residual
@@ -48,9 +52,9 @@ function App() {
  
   return (
     <div className='card'>
-      <h1>Country search</h1>
+      <h1>Countries database</h1>
 
-      <SearchCountry onChange={handleChange} value={newSearch}/>
+      <SearchCountry onChange={handleChange} value={newSearch} />
 
       {tooMuchResults ? <h3>Too much results to show</h3> :
         countries.length === 1 ?

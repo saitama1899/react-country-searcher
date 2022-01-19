@@ -4,7 +4,9 @@
 }
 
 body {
-  background-image: url(./resources/bg.jfif);
+  /* background-image: url(./resources/bg.jfif); */
+  background-image: url('https://t3.ftcdn.net/jpg/01/62/97/84/360_F_162978432_KsCQQYZSVZbZABmgVkklnFgKnKdEj2Ku.jpg');
+  background-size: cover;
 }
 
 .container {
@@ -19,16 +21,16 @@ body {
   margin: 3em auto;
   width: 50em;
   height: 600px;
-  background: #fffef9f0;
+  background: #fffef9cc;
   padding: 4em;
-  border-radius: 2.5em;
-  box-shadow: 10px 10px 15px -4px rgb(0 0 0 / 60%);
+  border-radius: 0.25em;
+  box-shadow: 8px 8px 12px -8px rgb(0 0 0 / 20%);
 }
 
 
 .card h1 {
   /**font-family: travel;**/
-  font-family: 'Slackey', cursive;
+  font-family:  'Circular-Loom';
   font-size: 3rem;
   text-align: center;
   margin: 0;
@@ -60,7 +62,7 @@ body {
 
 .card .countryList li:nth-of-type(2n+1),
 .card .weather span:nth-of-type(2n+1) {
-  background: #dededa;
+  background: #e8e7e4
 }
 
 .card .countryList li button {
@@ -79,14 +81,14 @@ body {
 }
 
 .country {
-  background: #efeee8;
+  background: #cdcdcd42;
   padding: 1em 2em;
-  border-radius: 1em;
-  box-shadow: 10px 10px 15px -10px rgb(0 0 0 / 20%);
+  border-radius: 0.25em;
+  /* box-shadow: 10px 10px 15px -10px rgb(0 0 0 / 20%); */
 }
 
 .bleft {
-  border-left: 3px solid #dededa;
+  border-left: 1px solid #dededa;
   padding-left: 1em;
 }
 
