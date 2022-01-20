@@ -1,11 +1,12 @@
 import './App.css';
 
 import {useEffect, useState} from 'react'
-import axios from 'axios'
 
 import CountryList from './Components/CountryList'
 import Country from './Components/Country'
 import SearchCountry from './Components/SearchCountry'
+
+import { GetCountries } from './services/countries/GetCountries'
 
 require('dotenv').config()
 
@@ -27,20 +28,10 @@ function App() {
 
   useEffect(() => {
     if(newSearch) {
-      axios
-      .get(`https://restcountries.com/v2/name/${newSearch}`)
-      .then(response => {
-        console.log(response);
-        const {data} = response
-        const c = 
-          data.filter(country => country.name.toLowerCase()
-            .includes(newSearch.toLowerCase()))
-
-        checkLimit(c)
-      })
-      .catch(error => {
-        console.error(error);
-      })
+      GetCountries(newSearch)
+        .then(response => {
+          checkLimit(response)
+        })
     } else {
       settooMuchResults(false) // Para evitar el mensaje residual
     }
